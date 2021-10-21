@@ -9,9 +9,9 @@ ENV GOBIN /go/bin
 RUN go get ./...
 #RUN go mod download
 #RUN go mod vendor
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o mqtt_telegram_darksky .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o mqtt_telegram_weatherapi .
 FROM scratch
-COPY --from=builder /build/mqtt_telegram_darksky /app/
+COPY --from=builder /build/mqtt_telegram_weatherapi /app/
 COPY --from=builder /etc/ssl/certs /etc/ssl/certs
 WORKDIR /app
-CMD [ "./mqtt_telegram_darksky" ]
+CMD [ "./mqtt_telegram_weatherapi" ]
