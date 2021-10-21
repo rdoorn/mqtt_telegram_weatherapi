@@ -24,27 +24,27 @@ type Handler struct {
 }
 
 type TelemetryMQTTStatus struct {
-	Time    *int64  `json:"time"`
-	TimeStr *string `json:"time_string"`
-	Summary *string `json:"summary"`
+	Time    int64  `json:"time"`
+	TimeStr string `json:"time_string"`
+	Summary string `json:"summary"`
 	// Icon:clear-day
 	SunriseTime  int64   `json:"sunrise_time"`
 	SunsetTime   int64   `json:"sunset_time"`
 	SunriseTimeH float64 `json:"sunrise_time_h"`
 	SunsetTimeH  float64 `json:"sunset_time_h"`
 	//SunsetTime:0
-	PrecipIntensity *float64 `json:"rain_intensity"`
+	PrecipIntensity float64 `json:"rain_intensity"`
 	//PrecipIntensityMax:0
 	//PrecipIntensityMaxTime:0
 	//PrecipProbability *float64 `json:"rain_posibility"`
 	//PrecipType:  rain|
 	//PrecipAccumulation:0
-	Temperature *float64 `json:"temperature"`
+	Temperature float64 `json:"temperature"`
 	//TemperatureMin:0
 	//TemperatureMinTime:0
 	//TemperatureMax:0
 	//TemperatureMaxTime:0
-	ApparentTemperature *float64 `json:"apparent_temperature"`
+	ApparentTemperature float64 `json:"apparent_temperature"`
 	//ApparentTemperatureMin:0
 	//ApparentTemperatureMinTime:0
 	//ApparentTemperatureMax:0
@@ -53,22 +53,22 @@ type TelemetryMQTTStatus struct {
 	//NearestStormDistance *float64 `json:"nearest_storm_distance"`
 
 	//DewPoint         *float64 `json:"dew_point"`
-	WindSpeed        *float64 `json:"wind_speed"`
-	WindGust         *float64 `json:"wind_gust"`
-	WindBearing      *int64   `json:"wind_bearing"`
-	CloudCover       *int64   `json:"cloud_cover"`
-	Humidity         *int64   `json:"humidity"`
-	Pressure         *float64 `json:"pressure"`
-	Visibility       *float64 `json:"visibility"`
-	Ozone            *float64 `json:"ozone"`
-	CarbonOxide      *float64 `json:"carbon_oxide"`
-	NitrogenOxide    *float64 `json:"nitrogen_oxide"`
-	SulphurDioxide   *float64 `json:"sulphur_dioxide"`
-	PM2_5            *float64 `json:"pm2_5"`
-	PM10             *float64 `json:"pm10"`
-	MoonPhase        *string  `json:"moon_phase"`
-	MoonIllumination *int     `json:"moon_illumination"`
-	UVIndex          *float64 `json:"uv_index"`
+	WindSpeed        float64 `json:"wind_speed"`
+	WindGust         float64 `json:"wind_gust"`
+	WindBearing      int64   `json:"wind_bearing"`
+	CloudCover       int64   `json:"cloud_cover"`
+	Humidity         int64   `json:"humidity"`
+	Pressure         float64 `json:"pressure"`
+	Visibility       float64 `json:"visibility"`
+	Ozone            float64 `json:"ozone"`
+	CarbonOxide      float64 `json:"carbon_oxide"`
+	NitrogenOxide    float64 `json:"nitrogen_oxide"`
+	SulphurDioxide   float64 `json:"sulphur_dioxide"`
+	PM2_5            float64 `json:"pm2_5"`
+	PM10             float64 `json:"pm10"`
+	MoonPhase        string  `json:"moon_phase"`
+	MoonIllumination int     `json:"moon_illumination"`
+	UVIndex          float64 `json:"uv_index"`
 	//UVIndexTime float64
 }
 
