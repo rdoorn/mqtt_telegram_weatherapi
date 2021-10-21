@@ -1,1 +1,1 @@
-# mqtt_telegram_weatherapi
+# mqtt_telegram_solaredge
