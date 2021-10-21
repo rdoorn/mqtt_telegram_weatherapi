@@ -99,10 +99,15 @@ func (h *Handler) mqttOut(client mqtt.Client, msg mqtt.Message) {
 		h.statsd.Gauge(1.0, fmt.Sprintf("heerhugowaard2.%s.moon_illimination", update.TimeStr), fmt.Sprintf("%f", update.MoonIllumination))
 		h.statsd.Gauge(1.0, fmt.Sprintf("heerhugowaard2.%s.uv_index", update.TimeStr), fmt.Sprintf("%d", update.UVIndex))
 		h.statsd.Gauge(1.0, fmt.Sprintf("heerhugowaard2.%s.carbon_oxide", update.TimeStr), fmt.Sprintf("%f", update.CarbonOxide))
+		log.Printf("sending value heerhugowaard2.%s.carbon_oxide=%f", update.TimeStr, update.CarbonOxide)
 		h.statsd.Gauge(1.0, fmt.Sprintf("heerhugowaard2.%s.nitrogen_oxide", update.TimeStr), fmt.Sprintf("%f", update.NitrogenOxide))
+		log.Printf("sending value heerhugowaard2.%s.nitrogen_oxide=%f", update.TimeStr, update.NitrogenOxide)
 		h.statsd.Gauge(1.0, fmt.Sprintf("heerhugowaard2.%s.sulphur_dioxide", update.TimeStr), fmt.Sprintf("%f", update.SulphurDioxide))
-		h.statsd.Gauge(1.0, fmt.Sprintf("heerhugowaard2.%s.pm2_5", update.TimeStr), fmt.Sprintf("%f", update.CarbonOxide))
-		h.statsd.Gauge(1.0, fmt.Sprintf("heerhugowaard2.%s.pm10", update.TimeStr), fmt.Sprintf("%f", update.CarbonOxide))
+		log.Printf("sending value heerhugowaard2.%s.sulphur_dioxide=%f", update.TimeStr, update.SulphurDioxide)
+		h.statsd.Gauge(1.0, fmt.Sprintf("heerhugowaard2.%s.pm2_5", update.TimeStr), fmt.Sprintf("%f", update.PM2_5))
+		log.Printf("sending value heerhugowaard2.%s.pm2_5=%f", update.TimeStr, update.PM2_5)
+		h.statsd.Gauge(1.0, fmt.Sprintf("heerhugowaard2.%s.pm10", update.TimeStr), fmt.Sprintf("%f", update.PM10))
+		log.Printf("sending value heerhugowaard2.%s.pm10=%f", update.TimeStr, update.PM10)
 	}
 
 	h.last = time.Now()
